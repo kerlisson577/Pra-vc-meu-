@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
   <title>PARA MINHA NENÉM 💞</title>
 
   <style>
+
     @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
 
     * {
@@ -21,57 +23,15 @@
 
     body {
       min-height: 100vh;
-      font-family: 'Poppins', sans-serif;
       color: white;
-      overflow-x: hidden;
+      font-family: 'Poppins', sans-serif;
 
       background:
-        radial-gradient(circle at 20% 20%, rgba(255,255,255,0.18), transparent 25%),
-        radial-gradient(circle at 80% 80%, rgba(255,105,180,0.25), transparent 30%),
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,0.15), transparent 25%),
+        radial-gradient(circle at 80% 80%, rgba(255,100,170,0.2), transparent 30%),
         linear-gradient(135deg, #16000d, #4b071f, #8f1747, #ff477e);
 
-      position: relative;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-
-      background:
-        radial-gradient(circle at 50% 0%, rgba(255,255,255,0.12), transparent 35%),
-        linear-gradient(
-          120deg,
-          transparent 0%,
-          rgba(255,255,255,0.04) 50%,
-          transparent 100%
-        );
-
-      pointer-events: none;
-      z-index: -2;
-    }
-
-    .background-glow {
-      position: fixed;
-      width: 350px;
-      height: 350px;
-      border-radius: 50%;
-      filter: blur(90px);
-      opacity: 0.35;
-      pointer-events: none;
-      z-index: -1;
-    }
-
-    .glow1 {
-      background: #ff3f81;
-      top: -120px;
-      left: -120px;
-    }
-
-    .glow2 {
-      background: #ff9bc2;
-      bottom: -150px;
-      right: -120px;
+      overflow-x: hidden;
     }
 
     /* =========================
@@ -93,9 +53,7 @@
         radial-gradient(circle at 50% 35%, rgba(255,90,145,0.25), transparent 35%),
         linear-gradient(135deg, #100008, #3b061c, #700f38);
 
-      transition:
-        opacity 0.8s ease,
-        visibility 0.8s ease;
+      transition: opacity 0.8s ease, visibility 0.8s ease;
     }
 
     #entrada.saindo {
@@ -107,6 +65,7 @@
     .entrada-box {
       width: 100%;
       max-width: 390px;
+
       text-align: center;
 
       padding: 42px 25px;
@@ -114,6 +73,7 @@
       border-radius: 35px;
 
       background: rgba(255,255,255,0.08);
+
       border: 1px solid rgba(255,255,255,0.18);
 
       backdrop-filter: blur(20px);
@@ -122,10 +82,11 @@
         0 25px 70px rgba(0,0,0,0.45),
         inset 0 1px 0 rgba(255,255,255,0.12);
 
-      animation: aparecer 1.2s ease;
+      animation: aparecer 1s ease;
     }
 
     @keyframes aparecer {
+
       from {
         opacity: 0;
         transform: translateY(25px) scale(0.95);
@@ -135,62 +96,76 @@
         opacity: 1;
         transform: translateY(0) scale(1);
       }
+
     }
 
     .entrada-coracao {
       font-size: 58px;
       margin-bottom: 18px;
 
-      display: inline-block;
-
-      animation: pulsar 1.8s ease-in-out infinite;
+      animation: pulsar 1.8s infinite ease-in-out;
     }
 
     @keyframes pulsar {
-      0%, 100% {
+
+      0%,100% {
         transform: scale(1);
       }
 
       50% {
         transform: scale(1.12);
       }
+
     }
 
     .entrada-pequeno {
       font-size: 11px;
       letter-spacing: 4px;
       text-transform: uppercase;
+
       opacity: 0.65;
+
       margin-bottom: 8px;
     }
 
     .entrada-box h1 {
       font-family: 'Dancing Script', cursive;
+
       font-size: 52px;
+
       line-height: 1;
+
       margin-bottom: 18px;
     }
 
     .entrada-texto {
       font-size: 14px;
+
       line-height: 1.7;
+
       font-weight: 300;
-      opacity: 0.78;
+
+      opacity: 0.8;
+
       margin-bottom: 30px;
     }
 
     .entrar-btn {
-      width: 100%;
-      border: none;
-      outline: none;
 
-      padding: 16px 22px;
+      width: 100%;
+
+      border: none;
+
+      padding: 17px 20px;
 
       border-radius: 50px;
 
       color: white;
+
       font-family: 'Poppins', sans-serif;
+
       font-size: 14px;
+
       font-weight: 600;
 
       background: linear-gradient(
@@ -204,24 +179,19 @@
 
       cursor: pointer;
 
-      transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
-    }
-
-    .entrar-btn:hover {
-      transform: translateY(-2px);
-      box-shadow:
-        0 16px 40px rgba(255,65,125,0.45);
+      transition: 0.2s;
     }
 
     .entrar-btn:active {
-      transform: scale(0.97);
+      transform: scale(0.96);
     }
 
     .entrada-aviso {
+
       margin-top: 17px;
+
       font-size: 10px;
+
       opacity: 0.45;
     }
 
@@ -230,54 +200,54 @@
     ========================= */
 
     .heart {
+
       position: fixed;
+
       bottom: -50px;
+
       pointer-events: none;
+
       z-index: 1;
 
       animation: subir 9s linear infinite;
+
       opacity: 0;
     }
 
     .heart:nth-child(1) {
       left: 5%;
       animation-delay: 0s;
-      font-size: 18px;
     }
 
     .heart:nth-child(2) {
       left: 18%;
       animation-delay: 2s;
-      font-size: 25px;
     }
 
     .heart:nth-child(3) {
       left: 35%;
       animation-delay: 5s;
-      font-size: 17px;
     }
 
     .heart:nth-child(4) {
       left: 52%;
       animation-delay: 1s;
-      font-size: 23px;
     }
 
     .heart:nth-child(5) {
       left: 70%;
       animation-delay: 4s;
-      font-size: 18px;
     }
 
     .heart:nth-child(6) {
       left: 88%;
       animation-delay: 7s;
-      font-size: 26px;
     }
 
     @keyframes subir {
+
       0% {
-        transform: translateY(0) rotate(0deg) scale(0.7);
+        transform: translateY(0) scale(0.7);
         opacity: 0;
       }
 
@@ -285,83 +255,96 @@
         opacity: 0.8;
       }
 
-      50% {
-        transform: translateY(-50vh) rotate(15deg) scale(1);
-      }
-
       100% {
-        transform: translateY(-115vh) rotate(-20deg) scale(1.4);
+        transform: translateY(-115vh) scale(1.4);
         opacity: 0;
       }
+
     }
 
     /* =========================
-       SITE
+       CONTEÚDO
     ========================= */
 
     .container {
+
       width: 92%;
+
       max-width: 500px;
-      margin: 0 auto;
+
+      margin: auto;
+
       padding: 55px 0 70px;
-      position: relative;
-      z-index: 2;
     }
 
     .top-heart {
+
       width: 68px;
+
       height: 68px;
-      margin: 0 auto 20px;
+
+      margin: auto;
+
+      margin-bottom: 20px;
 
       display: flex;
+
       align-items: center;
+
       justify-content: center;
 
       border-radius: 50%;
 
       background: rgba(255,255,255,0.12);
+
       border: 1px solid rgba(255,255,255,0.25);
-
-      box-shadow:
-        0 10px 40px rgba(0,0,0,0.25),
-        inset 0 0 25px rgba(255,255,255,0.08);
-
-      backdrop-filter: blur(15px);
 
       font-size: 30px;
 
-      animation: pulsar 2.5s ease-in-out infinite;
+      animation: pulsar 2.5s infinite;
     }
 
     .mini-title {
+
       text-align: center;
+
       font-size: 12px;
+
       letter-spacing: 4px;
+
       text-transform: uppercase;
-      opacity: 0.75;
+
+      opacity: 0.7;
+
       margin-bottom: 8px;
     }
 
-    .titulo-principal {
-      text-align: center;
-      font-family: 'Dancing Script', cursive;
-      font-size: clamp(48px, 13vw, 72px);
-      line-height: 0.95;
+    .titulo {
 
-      text-shadow:
-        0 5px 25px rgba(0,0,0,0.3);
+      text-align: center;
+
+      font-family: 'Dancing Script', cursive;
+
+      font-size: clamp(48px, 13vw, 72px);
+
+      line-height: 0.95;
 
       margin-bottom: 15px;
     }
 
     .subtitle {
+
       text-align: center;
+
       font-size: 14px;
+
       font-weight: 300;
-      opacity: 0.82;
+
       line-height: 1.7;
-      max-width: 340px;
-      margin: 0 auto 38px;
+
+      opacity: 0.8;
+
+      margin-bottom: 38px;
     }
 
     /* =========================
@@ -369,23 +352,33 @@
     ========================= */
 
     .photo-wrapper {
+
       position: relative;
-      width: 100%;
+
       margin-bottom: 35px;
     }
 
     .photo-glow {
+
       position: absolute;
-      inset: 12px;
+
+      inset: 15px;
+
       background: #ff3f81;
+
       filter: blur(35px);
+
       opacity: 0.45;
+
       border-radius: 35px;
-      z-index: -1;
     }
 
     .photo-box {
+
+      position: relative;
+
       padding: 9px;
+
       border-radius: 30px;
 
       background:
@@ -398,46 +391,41 @@
       border: 1px solid rgba(255,255,255,0.35);
 
       box-shadow:
-        0 25px 60px rgba(0,0,0,0.3),
-        inset 0 0 20px rgba(255,255,255,0.1);
-
-      backdrop-filter: blur(12px);
+        0 25px 60px rgba(0,0,0,0.3);
     }
 
     .photo-box img {
+
       display: block;
+
       width: 100%;
+
       max-height: 520px;
 
       object-fit: cover;
 
       border-radius: 23px;
-
-      transition: transform 0.5s ease;
-    }
-
-    .photo-box:hover img {
-      transform: scale(1.02);
     }
 
     .photo-caption {
+
       text-align: center;
+
       margin-top: 14px;
 
       font-family: 'Dancing Script', cursive;
-      font-size: 24px;
 
-      opacity: 0.9;
+      font-size: 24px;
     }
 
     /* =========================
-       MENSAGEM
+       CARTÃO
     ========================= */
 
     .card {
-      position: relative;
 
       background: rgba(255,255,255,0.10);
+
       border: 1px solid rgba(255,255,255,0.18);
 
       border-radius: 30px;
@@ -447,62 +435,45 @@
       backdrop-filter: blur(18px);
 
       box-shadow:
-        0 20px 50px rgba(0,0,0,0.22),
-        inset 0 1px 0 rgba(255,255,255,0.12);
+        0 20px 50px rgba(0,0,0,0.22);
 
       margin-bottom: 25px;
     }
 
     .card-label {
+
       font-size: 11px;
+
       letter-spacing: 3px;
+
       text-transform: uppercase;
+
       opacity: 0.65;
+
       margin-bottom: 16px;
     }
 
     .message {
+
       font-size: 15px;
+
       line-height: 1.9;
+
       font-weight: 300;
     }
 
     .message p {
+
       margin-bottom: 18px;
     }
 
-    .message p:last-child {
-      margin-bottom: 0;
-    }
-
     .highlight {
+
       font-family: 'Dancing Script', cursive;
+
       font-size: 30px;
+
       line-height: 1.3;
-      margin-top: 22px;
-    }
-
-    /* =========================
-       DIVISOR
-    ========================= */
-
-    .divider {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-
-      margin: 32px 0;
-      opacity: 0.6;
-    }
-
-    .divider span {
-      height: 1px;
-      flex: 1;
-      background: rgba(255,255,255,0.35);
-    }
-
-    .divider-heart {
-      font-size: 17px;
     }
 
     /* =========================
@@ -510,10 +481,13 @@
     ========================= */
 
     .music-card {
-      background: rgba(20,0,10,0.25);
+
+      background: rgba(20,0,10,0.28);
+
       border: 1px solid rgba(255,255,255,0.16);
 
       border-radius: 30px;
+
       padding: 25px 22px;
 
       backdrop-filter: blur(18px);
@@ -523,151 +497,145 @@
     }
 
     .music-top {
+
       display: flex;
+
       align-items: center;
+
       gap: 15px;
-      margin-bottom: 15px;
+
+      margin-bottom: 18px;
     }
 
     .music-icon {
+
       width: 52px;
+
       height: 52px;
+
       flex-shrink: 0;
 
       display: flex;
+
       align-items: center;
+
       justify-content: center;
 
       border-radius: 17px;
 
       background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.15);
 
       font-size: 23px;
     }
 
-    .music-info {
-      text-align: left;
-    }
-
     .music-label {
+
       font-size: 10px;
-      text-transform: uppercase;
+
       letter-spacing: 2px;
+
+      text-transform: uppercase;
+
       opacity: 0.55;
-      margin-bottom: 3px;
     }
 
     .music-title {
-      font-size: 16px;
-      font-weight: 600;
-    }
 
-    .music-subtitle {
-      font-size: 11px;
-      opacity: 0.6;
+      font-size: 16px;
+
+      font-weight: 600;
+
       margin-top: 3px;
     }
 
-    audio {
-      width: 100%;
-      height: 42px;
-    }
+    .music-subtitle {
 
-    /* =========================
-       BOTÃO DE MÚSICA
-    ========================= */
-
-    .music-control {
-      margin-top: 15px;
-      width: 100%;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-
-      border: 1px solid rgba(255,255,255,0.16);
-      background: rgba(255,255,255,0.08);
-
-      color: white;
-
-      border-radius: 50px;
-      padding: 11px;
-
-      font-family: 'Poppins', sans-serif;
       font-size: 11px;
 
-      cursor: pointer;
+      opacity: 0.6;
+
+      margin-top: 3px;
+    }
+
+    /* PLAYER VISÍVEL */
+
+    audio {
+
+      width: 100%;
+
+      height: 48px;
+
+      display: block;
+
+      margin-top: 5px;
+    }
+
+    .status-musica {
+
+      text-align: center;
+
+      font-size: 11px;
+
+      opacity: 0.65;
+
+      margin-top: 12px;
     }
 
     /* =========================
        FINAL
     ========================= */
 
-    .final-message {
+    .final {
+
       text-align: center;
-      padding: 42px 10px 10px;
+
+      padding-top: 45px;
     }
 
-    .final-message .big-heart {
+    .final-heart {
+
       font-size: 35px;
+
       display: block;
-      margin-bottom: 12px;
 
-      animation: pulsar 2.5s ease-in-out infinite;
+      animation: pulsar 2.5s infinite;
     }
 
-    .final-message h2 {
+    .final h2 {
+
       font-family: 'Dancing Script', cursive;
+
       font-size: 40px;
-      margin-bottom: 8px;
+
+      margin-top: 10px;
     }
 
-    .final-message p {
+    .final p {
+
       font-size: 12px;
+
       opacity: 0.6;
+
       line-height: 1.7;
+
+      margin-top: 8px;
     }
 
-    .signature {
-      margin-top: 20px;
+    .assinatura {
+
       font-family: 'Dancing Script', cursive;
+
       font-size: 24px;
-      opacity: 0.9;
-    }
 
-    @media (max-width: 400px) {
-
-      .container {
-        padding-top: 40px;
-      }
-
-      .titulo-principal {
-        font-size: 47px;
-      }
-
-      .card {
-        padding: 25px 20px;
-      }
-
-      .message {
-        font-size: 14px;
-      }
-
-      .highlight {
-        font-size: 27px;
-      }
-
-      .entrada-box h1 {
-        font-size: 47px;
-      }
+      margin-top: 20px;
     }
 
   </style>
 </head>
 
+
 <body>
+
 
   <!-- =========================
        TELA DE ENTRADA
@@ -690,20 +658,29 @@
       </h1>
 
       <p class="entrada-texto">
-        Eu preparei um cantinho especialmente
-        para você.<br>
+
+        Eu preparei um cantinho
+        especialmente para você.
+
+        <br>
+
         Só falta você entrar. ❤️
+
       </p>
 
       <button
         class="entrar-btn"
-        onclick="entrarNoSite()"
+        onclick="entrar()"
       >
+
         💗 TOQUE PARA ENTRAR
+
       </button>
 
       <div class="entrada-aviso">
+
         🎵 A música começa quando você entrar
+
       </div>
 
     </div>
@@ -711,12 +688,10 @@
   </div>
 
 
-  <!-- LUZES -->
-  <div class="background-glow glow1"></div>
-  <div class="background-glow glow2"></div>
+  <!-- =========================
+       CORAÇÕES
+  ========================= -->
 
-
-  <!-- CORAÇÕES -->
   <div class="heart">💗</div>
   <div class="heart">💕</div>
   <div class="heart">💞</div>
@@ -726,27 +701,33 @@
 
 
   <!-- =========================
-       CONTEÚDO PRINCIPAL
+       SITE
   ========================= -->
 
   <main class="container">
+
 
     <div class="top-heart">
       💞
     </div>
 
+
     <div class="mini-title">
       Feito com amor
     </div>
 
-    <h1 class="titulo-principal">
+
+    <h1 class="titulo">
       Para minha<br>
       neném
     </h1>
 
+
     <p class="subtitle">
+
       Um pequeno cantinho na internet,
       mas feito com um sentimento enorme. ❤️
+
     </p>
 
 
@@ -766,7 +747,9 @@
       </div>
 
       <div class="photo-caption">
+
         Meu lugar favorito é ao seu lado. ❤️
+
       </div>
 
     </section>
@@ -777,38 +760,59 @@
     <section class="card">
 
       <div class="card-label">
+
         Uma mensagem para você
+
       </div>
+
 
       <div class="message">
 
         <p>
-          Meu amor, eu fiz esse cantinho especialmente
-          para você, porque algumas pessoas merecem
-          muito mais do que apenas um "eu te amo".
+
+          Meu amor, eu fiz esse cantinho
+          especialmente para você, porque algumas
+          pessoas merecem muito mais do que apenas
+          um "eu te amo".
+
         </p>
 
+
         <p>
+
           Você é uma pessoa muito especial para mim.
           É alguém que conseguiu ocupar um espaço enorme
           no meu coração e que faz meus dias ficarem
           muito mais bonitos.
+
         </p>
 
+
         <p>
-          Talvez esse site seja simples, mas cada detalhe
-          dele foi pensado para lembrar você do quanto
+
+          Talvez esse site seja simples,
+          mas cada detalhe dele foi pensado
+          para lembrar você do quanto
           é importante para mim.
+
         </p>
 
+
         <p>
-          Quando você sentir saudade, quando estiver
-          triste ou simplesmente quando quiser lembrar
-          que alguém te ama muito...
+
+          Quando você sentir saudade,
+          quando estiver triste ou simplesmente
+          quando quiser lembrar que alguém
+          te ama muito...
+
         </p>
+
 
         <p class="highlight">
-          Volta aqui. Esse cantinho sempre vai ser seu. 💞
+
+          Volta aqui.
+          Esse cantinho sempre vai ser seu. 💞
+
         </p>
 
       </div>
@@ -816,35 +820,23 @@
     </section>
 
 
-    <!-- DIVISOR -->
-
-    <div class="divider">
-
-      <span></span>
-
-      <div class="divider-heart">
-        ♡
-      </div>
-
-      <span></span>
-
-    </div>
-
-
     <!-- MÚSICA -->
 
     <section class="music-card">
 
+
       <div class="music-top">
+
 
         <div class="music-icon">
           🎵
         </div>
 
-        <div class="music-info">
+
+        <div>
 
           <div class="music-label">
-            Tocando para você
+            Nossa música
           </div>
 
           <div class="music-title">
@@ -857,16 +849,21 @@
 
         </div>
 
+
       </div>
 
+
       <!--
-        O áudio fica escondido visualmente.
-        A música começa automaticamente
-        depois do toque no botão de entrada.
+        IMPORTANTE:
+
+        O nome precisa ser exatamente:
+        musica.mp3
+
       -->
 
       <audio
         id="musica"
+        controls
         preload="auto"
         loop
       >
@@ -876,27 +873,30 @@
           type="audio/mpeg"
         >
 
-        Seu navegador não conseguiu reproduzir
-        esta música.
+        Seu navegador não conseguiu
+        reproduzir a música.
 
       </audio>
 
-      <button
-        class="music-control"
-        onclick="alternarMusica()"
-        id="botaoMusica"
+
+      <div
+        class="status-musica"
+        id="status"
       >
-        🔊 Música tocando
-      </button>
+
+        🎵 Toque em "Entrar" para começar a música
+
+      </div>
+
 
     </section>
 
 
     <!-- FINAL -->
 
-    <footer class="final-message">
+    <footer class="final">
 
-      <span class="big-heart">
+      <span class="final-heart">
         ❤️
       </span>
 
@@ -905,15 +905,20 @@
       </h2>
 
       <p>
+
         Hoje, amanhã e em todos os dias
         que ainda vamos viver juntos.
+
       </p>
 
-      <div class="signature">
+      <div class="assinatura">
+
         Com amor, para você. 💞
+
       </div>
 
     </footer>
+
 
   </main>
 
@@ -924,77 +929,110 @@
 
   <script>
 
-    const musica = document.getElementById("musica");
-    const entrada = document.getElementById("entrada");
-    const botaoMusica = document.getElementById("botaoMusica");
+    const musica =
+      document.getElementById("musica");
+
+    const entrada =
+      document.getElementById("entrada");
+
+    const status =
+      document.getElementById("status");
 
 
-    /*
-      QUANDO ELA TOCAR EM
-      "TOQUE PARA ENTRAR":
+    function entrar() {
 
-      1. A música começa.
-      2. A tela de entrada desaparece.
-      3. O site fica disponível.
-    */
 
-    function entrarNoSite() {
+      /*
+        O play acontece diretamente
+        depois do toque da pessoa.
+
+        Isso aumenta muito a chance
+        do navegador permitir o áudio.
+      */
 
       musica.volume = 0.45;
 
-      musica.play()
-        .then(() => {
 
-          botaoMusica.innerHTML =
-            "🔊 Música tocando";
+      const promessa = musica.play();
 
-        })
-        .catch(() => {
 
-          botaoMusica.innerHTML =
-            "▶️ Toque para tocar a música";
+      if (promessa !== undefined) {
+
+
+        promessa.then(function() {
+
+          status.innerHTML =
+            "🔊 Música tocando para você ❤️";
 
         });
 
+
+        promessa.catch(function() {
+
+          status.innerHTML =
+            "▶️ Aperte o play na música para começar";
+
+        });
+
+      }
+
+
+      /*
+        Fecha a tela de entrada.
+      */
+
       entrada.classList.add("saindo");
 
-      setTimeout(() => {
+
+      setTimeout(function() {
 
         entrada.style.display = "none";
 
-      }, 900);
+      }, 850);
 
     }
 
 
     /*
-      BOTÃO DA MÚSICA
-
-      Permite pausar ou continuar
-      caso ela queira.
+      Atualiza o texto se ela
+      pausar manualmente.
     */
 
-    function alternarMusica() {
+    musica.addEventListener(
+      "play",
+      function() {
 
-      if (musica.paused) {
-
-        musica.play();
-
-        botaoMusica.innerHTML =
-          "🔊 Música tocando";
-
-      } else {
-
-        musica.pause();
-
-        botaoMusica.innerHTML =
-          "🔇 Música pausada";
+        status.innerHTML =
+          "🔊 Música tocando para você ❤️";
 
       }
+    );
 
-    }
+
+    musica.addEventListener(
+      "pause",
+      function() {
+
+        status.innerHTML =
+          "⏸️ Música pausada";
+
+      }
+    );
+
+
+    musica.addEventListener(
+      "ended",
+      function() {
+
+        status.innerHTML =
+          "🎵 Música finalizada";
+
+      }
+    );
 
   </script>
 
+
 </body>
+
 </html>
