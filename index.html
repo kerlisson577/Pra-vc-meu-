@@ -33,10 +33,6 @@
       position: relative;
     }
 
-    /* =========================
-       FUNDO
-    ========================= */
-
     body::before {
       content: "";
       position: fixed;
@@ -79,15 +75,165 @@
     }
 
     /* =========================
+       TELA DE ENTRADA
+    ========================= */
+
+    #entrada {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 25px;
+
+      background:
+        radial-gradient(circle at 50% 35%, rgba(255,90,145,0.25), transparent 35%),
+        linear-gradient(135deg, #100008, #3b061c, #700f38);
+
+      transition:
+        opacity 0.8s ease,
+        visibility 0.8s ease;
+    }
+
+    #entrada.saindo {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .entrada-box {
+      width: 100%;
+      max-width: 390px;
+      text-align: center;
+
+      padding: 42px 25px;
+
+      border-radius: 35px;
+
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.18);
+
+      backdrop-filter: blur(20px);
+
+      box-shadow:
+        0 25px 70px rgba(0,0,0,0.45),
+        inset 0 1px 0 rgba(255,255,255,0.12);
+
+      animation: aparecer 1.2s ease;
+    }
+
+    @keyframes aparecer {
+      from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.95);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .entrada-coracao {
+      font-size: 58px;
+      margin-bottom: 18px;
+
+      display: inline-block;
+
+      animation: pulsar 1.8s ease-in-out infinite;
+    }
+
+    @keyframes pulsar {
+      0%, 100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.12);
+      }
+    }
+
+    .entrada-pequeno {
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      opacity: 0.65;
+      margin-bottom: 8px;
+    }
+
+    .entrada-box h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 52px;
+      line-height: 1;
+      margin-bottom: 18px;
+    }
+
+    .entrada-texto {
+      font-size: 14px;
+      line-height: 1.7;
+      font-weight: 300;
+      opacity: 0.78;
+      margin-bottom: 30px;
+    }
+
+    .entrar-btn {
+      width: 100%;
+      border: none;
+      outline: none;
+
+      padding: 16px 22px;
+
+      border-radius: 50px;
+
+      color: white;
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+
+      background: linear-gradient(
+        135deg,
+        #ff4f8b,
+        #ff86b0
+      );
+
+      box-shadow:
+        0 12px 35px rgba(255,65,125,0.35);
+
+      cursor: pointer;
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .entrar-btn:hover {
+      transform: translateY(-2px);
+      box-shadow:
+        0 16px 40px rgba(255,65,125,0.45);
+    }
+
+    .entrar-btn:active {
+      transform: scale(0.97);
+    }
+
+    .entrada-aviso {
+      margin-top: 17px;
+      font-size: 10px;
+      opacity: 0.45;
+    }
+
+    /* =========================
        CORAÇÕES
     ========================= */
 
     .heart {
       position: fixed;
       bottom: -50px;
-      font-size: 20px;
       pointer-events: none;
-      z-index: 0;
+      z-index: 1;
 
       animation: subir 9s linear infinite;
       opacity: 0;
@@ -150,7 +296,7 @@
     }
 
     /* =========================
-       CONTAINER
+       SITE
     ========================= */
 
     .container {
@@ -161,10 +307,6 @@
       position: relative;
       z-index: 2;
     }
-
-    /* =========================
-       TOPO
-    ========================= */
 
     .top-heart {
       width: 68px;
@@ -191,16 +333,6 @@
       animation: pulsar 2.5s ease-in-out infinite;
     }
 
-    @keyframes pulsar {
-      0%, 100% {
-        transform: scale(1);
-      }
-
-      50% {
-        transform: scale(1.08);
-      }
-    }
-
     .mini-title {
       text-align: center;
       font-size: 12px;
@@ -210,7 +342,7 @@
       margin-bottom: 8px;
     }
 
-    h1 {
+    .titulo-principal {
       text-align: center;
       font-family: 'Dancing Script', cursive;
       font-size: clamp(48px, 13vw, 72px);
@@ -299,7 +431,7 @@
     }
 
     /* =========================
-       CARTÃO DE MENSAGEM
+       MENSAGEM
     ========================= */
 
     .card {
@@ -382,7 +514,7 @@
       border: 1px solid rgba(255,255,255,0.16);
 
       border-radius: 30px;
-      padding: 27px 22px;
+      padding: 25px 22px;
 
       backdrop-filter: blur(18px);
 
@@ -394,7 +526,7 @@
       display: flex;
       align-items: center;
       gap: 15px;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
 
     .music-icon {
@@ -439,7 +571,34 @@
 
     audio {
       width: 100%;
-      height: 45px;
+      height: 42px;
+    }
+
+    /* =========================
+       BOTÃO DE MÚSICA
+    ========================= */
+
+    .music-control {
+      margin-top: 15px;
+      width: 100%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+
+      border: 1px solid rgba(255,255,255,0.16);
+      background: rgba(255,255,255,0.08);
+
+      color: white;
+
+      border-radius: 50px;
+      padding: 11px;
+
+      font-family: 'Poppins', sans-serif;
+      font-size: 11px;
+
+      cursor: pointer;
     }
 
     /* =========================
@@ -478,16 +637,13 @@
       opacity: 0.9;
     }
 
-    /* =========================
-       RESPONSIVO
-    ========================= */
-
     @media (max-width: 400px) {
+
       .container {
         padding-top: 40px;
       }
 
-      h1 {
+      .titulo-principal {
         font-size: 47px;
       }
 
@@ -502,6 +658,10 @@
       .highlight {
         font-size: 27px;
       }
+
+      .entrada-box h1 {
+        font-size: 47px;
+      }
     }
 
   </style>
@@ -509,11 +669,54 @@
 
 <body>
 
-  <!-- LUZES DO FUNDO -->
+  <!-- =========================
+       TELA DE ENTRADA
+  ========================= -->
+
+  <div id="entrada">
+
+    <div class="entrada-box">
+
+      <div class="entrada-coracao">
+        💞
+      </div>
+
+      <div class="entrada-pequeno">
+        Uma surpresa para você
+      </div>
+
+      <h1>
+        Minha neném
+      </h1>
+
+      <p class="entrada-texto">
+        Eu preparei um cantinho especialmente
+        para você.<br>
+        Só falta você entrar. ❤️
+      </p>
+
+      <button
+        class="entrar-btn"
+        onclick="entrarNoSite()"
+      >
+        💗 TOQUE PARA ENTRAR
+      </button>
+
+      <div class="entrada-aviso">
+        🎵 A música começa quando você entrar
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- LUZES -->
   <div class="background-glow glow1"></div>
   <div class="background-glow glow2"></div>
 
-  <!-- CORAÇÕES FLUTUANDO -->
+
+  <!-- CORAÇÕES -->
   <div class="heart">💗</div>
   <div class="heart">💕</div>
   <div class="heart">💞</div>
@@ -522,9 +725,12 @@
   <div class="heart">❤️</div>
 
 
+  <!-- =========================
+       CONTEÚDO PRINCIPAL
+  ========================= -->
+
   <main class="container">
 
-    <!-- TOPO -->
     <div class="top-heart">
       💞
     </div>
@@ -533,7 +739,7 @@
       Feito com amor
     </div>
 
-    <h1>
+    <h1 class="titulo-principal">
       Para minha<br>
       neném
     </h1>
@@ -545,6 +751,7 @@
 
 
     <!-- FOTO -->
+
     <section class="photo-wrapper">
 
       <div class="photo-glow"></div>
@@ -553,7 +760,7 @@
 
         <img
           src="Foto.jpg"
-          alt="Uma foto especial nossa"
+          alt="Uma foto especial"
         >
 
       </div>
@@ -566,6 +773,7 @@
 
 
     <!-- MENSAGEM -->
+
     <section class="card">
 
       <div class="card-label">
@@ -609,14 +817,22 @@
 
 
     <!-- DIVISOR -->
+
     <div class="divider">
+
       <span></span>
-      <div class="divider-heart">♡</div>
+
+      <div class="divider-heart">
+        ♡
+      </div>
+
       <span></span>
+
     </div>
 
 
     <!-- MÚSICA -->
+
     <section class="music-card">
 
       <div class="music-top">
@@ -628,7 +844,7 @@
         <div class="music-info">
 
           <div class="music-label">
-            Nossa música
+            Tocando para você
           </div>
 
           <div class="music-title">
@@ -643,7 +859,17 @@
 
       </div>
 
-      <audio controls preload="metadata">
+      <!--
+        O áudio fica escondido visualmente.
+        A música começa automaticamente
+        depois do toque no botão de entrada.
+      -->
+
+      <audio
+        id="musica"
+        preload="auto"
+        loop
+      >
 
         <source
           src="musica.mp3"
@@ -655,10 +881,19 @@
 
       </audio>
 
+      <button
+        class="music-control"
+        onclick="alternarMusica()"
+        id="botaoMusica"
+      >
+        🔊 Música tocando
+      </button>
+
     </section>
 
 
     <!-- FINAL -->
+
     <footer class="final-message">
 
       <span class="big-heart">
@@ -681,6 +916,85 @@
     </footer>
 
   </main>
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================= -->
+
+  <script>
+
+    const musica = document.getElementById("musica");
+    const entrada = document.getElementById("entrada");
+    const botaoMusica = document.getElementById("botaoMusica");
+
+
+    /*
+      QUANDO ELA TOCAR EM
+      "TOQUE PARA ENTRAR":
+
+      1. A música começa.
+      2. A tela de entrada desaparece.
+      3. O site fica disponível.
+    */
+
+    function entrarNoSite() {
+
+      musica.volume = 0.45;
+
+      musica.play()
+        .then(() => {
+
+          botaoMusica.innerHTML =
+            "🔊 Música tocando";
+
+        })
+        .catch(() => {
+
+          botaoMusica.innerHTML =
+            "▶️ Toque para tocar a música";
+
+        });
+
+      entrada.classList.add("saindo");
+
+      setTimeout(() => {
+
+        entrada.style.display = "none";
+
+      }, 900);
+
+    }
+
+
+    /*
+      BOTÃO DA MÚSICA
+
+      Permite pausar ou continuar
+      caso ela queira.
+    */
+
+    function alternarMusica() {
+
+      if (musica.paused) {
+
+        musica.play();
+
+        botaoMusica.innerHTML =
+          "🔊 Música tocando";
+
+      } else {
+
+        musica.pause();
+
+        botaoMusica.innerHTML =
+          "🔇 Música pausada";
+
+      }
+
+    }
+
+  </script>
 
 </body>
 </html>
